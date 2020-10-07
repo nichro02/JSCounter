@@ -1,5 +1,3 @@
-console.log('hello')
-
 let total = 0
 
 const currentTotal = () => {
@@ -7,13 +5,14 @@ const currentTotal = () => {
     currentTotal.innerHTML = total 
 }
 
-
 const addToTotal = (event) => {
     let numToAdd = document.querySelector('#value')
-    console.log(typeof parseInt(numToAdd.value))
-    total += parseInt(numToAdd.value)
-    console.log(total)
-    currentNum = total
+    if(!numToAdd.value) {
+        total += 0
+    } else {
+        total += parseInt(numToAdd.value)
+    }
+    console.log(numToAdd.value)
     currentTotal()
     addRedForNegative()
     return
@@ -21,9 +20,11 @@ const addToTotal = (event) => {
 
 const subtractFromTotal = (event) => {
     let numToSubtract = document.querySelector('#value')
-    console.log(typeof parseInt(numToSubtract.value))
-    total -= parseInt(numToSubtract.value)
-    console.log(total)
+    if(!numToSubtract.value) {
+        total -= 0
+    } else {
+        total -= parseInt(numToSubtract.value)
+    }
     currentTotal()
     addRedForNegative()
     return 
@@ -69,7 +70,6 @@ const addMouseOverEvents = () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContentLoaded')
     currentTotal()
     addButtonListeners()
     addMouseOverEvents()
