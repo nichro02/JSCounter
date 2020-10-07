@@ -8,31 +8,34 @@ const currentTotal = () => {
 }
 
 const addToTotal = (event) => {
-    let currentNum = document.querySelector('#displayNum').innerHTML
-    //let convertedNum = parseInt(currentNum)
     let numToAdd = document.querySelector('#value')
-    //console.log(typeof currentNum)
-    //console.log(typeof convertedNum)
     console.log(typeof parseInt(numToAdd.value))
-    //convertedNum += parseInt(numToAdd.value)
     total += parseInt(numToAdd.value)
     console.log(total)
-    //console.log(convertedNum)
     currentNum = total
-    console.log(currentNum)
     currentTotal()
+    addRedForNegative()
     return
 }
 
 const subtractFromTotal = (event) => {
-    let currentNum = document.querySelector('#displayNum').innerHTML
     let numToSubtract = document.querySelector('#value')
     console.log(typeof parseInt(numToSubtract.value))
-    //currentNum = total
     total -= parseInt(numToSubtract.value)
     console.log(total)
     currentTotal()
+    addRedForNegative()
     return 
+}
+
+const addRedForNegative = () => {
+    if(total < 0) {
+        let currentTotal = document.querySelector('#displayNum')
+        currentTotal.classList.add('red')
+    } else if(total >= 0) {
+        let currentTotal = document.querySelector('#displayNum')
+        currentTotal.classList.remove('red')
+    }
 }
 
 const addButtonListeners = () => {
