@@ -1,7 +1,33 @@
 body {
-    background-color: green;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    text-align: center;
+    width: 100%;
+    margin: 20% 0 20% 0;
+}
+
+button {
+    height: 50px;
+    width: 75px;
+    text-size-adjust: 200%;
+}
+
+input {
+    height: 50px;
+    width: 150px;
+    text-size-adjust: 200%;
+    text-align: center;
 }
 
 .red {
     color: red;
+}
+
+#displayNum {
+    text-size-adjust: 1000%;
 }

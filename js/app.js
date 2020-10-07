@@ -50,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded')
     currentTotal()
     addButtonListeners()
+
 })
